@@ -8,6 +8,8 @@ Débora Vitória Pereira do Nascimento - 01634436
 
 Diego Henrique Rodrigues - 01650828
 
+Eric Mendonça Batista de Santana - 01447877
+
 Gustavo Portela Pachêco - 01604533
 
 João Guilherme Caetano dos Santos 01481382
