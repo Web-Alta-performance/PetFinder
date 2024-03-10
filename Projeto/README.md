@@ -1,18 +1,21 @@
 # Pet Finder
-Um aplicativo que busca democratizar a adoção de animais domésticos.
+## Problemática
+Criar um aplicativo que busca democratizar a adoção de animais domésticos.
 
-Passo a passo de como executar o código:
-    - Ter o `Node.js` instalado na máquina; <br />
-    - Abrir o terminal na pasta "projeto"; <br />
-    - Executar `npm install`; <br />
+## Design
+O design deste projeto foi criado a partir da ferramenta Figma. É possível acessar o arquivo [aqui](https://www.figma.com/file/WyXEWZHWTZc6BmzmMkv105/Untitled?type=design&node-id=0%3A1&mode=design&t=trw0GK8GCt1HpYng-1).
 
-Para executar no mobile:
-    - Executar `npx expo start`; <br />
-    - Escanear o QR Code pelo aplicativo `Expo Go`. <br />
+## Executando o projeto
+### Passo a passo de como utilizar o código:
+1. Ter o ```Node.js``` instalado na máquina;
+2. Abrir o terminal na pasta do projeto;
+3. Executar `npm install`;
 
-Para executar na web:
-    - Executar `npx expo install react-dom react-native-web @expo/metro-runtime`; <br />
-    - Executar `npx expo start`; <br />
-    - Pressionar `W`; <br />
+### Executando o código no mobile:
+4. Executar `npx expo start`;
+5. Escanear o QR Code pelo aplicativo `Expo Go`.
 
-Design criado no [Figma](https://www.figma.com/file/WyXEWZHWTZc6BmzmMkv105/Untitled?type=design&node-id=0%3A1&mode=design&t=trw0GK8GCt1HpYng-1)
+### Executando o código na web:
+4. Executar `npx expo install react-dom react-native-web @expo/metro-runtime`;
+5. Executar `npx expo start`;
+6. Pressionar `W`.
