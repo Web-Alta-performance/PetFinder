@@ -1,54 +1,55 @@
 import { StyleSheet, View, Image, Text, TextInput, Pressable } from 'react-native';
 import { useFonts } from 'expo-font';
 
-const FormLogin = () => {
+const FormInput = (props) => {
+    return (
+        <View style={{gap: 2, width: '100%'}}>
+            <Text style={[styles.text, { fontSize: '1em', }]}>
+                {props.children}
+            </Text>
+            <TextInput secureTextEntry={props.secure} style={styles.input}/>
+        </View>
+    );
+};
+
+const LinkButton = (props) => {
+    return (
+        <Pressable onPress={props.onPress}>
+            <Text style={styles.text}>
+                {props.children}
+            </Text>
+        </Pressable>
+    );
+};
+
+const FormLogin = (props) => {
     
     const [fontsLoaded] = useFonts({
         'Quicksand': require('../assets/fonts/Quicksand.ttf')
     });
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, props.style]}>
             <Image source={require('../assets/Logo.png')}/>
             
             {/* Campo de formulário */}
-            <View style={{gap: 2, width: '100%'}}>
-                <Text style={[styles.text, { fontSize: '1.15rem', }]}>
-                    E-mail
-                </Text>
-                <TextInput style={styles.input}/>
-            </View>
-
-            <View style={{gap: 2, width: '100%'}}>
-                <Text style={[styles.text, { fontSize: '1.15rem', }]}>
-                    Senha
-                </Text>
-                <TextInput style={styles.input} secureTextEntry={true}/>
-            </View>
+            <FormInput>E-mail</FormInput>
+            <FormInput secure>Senha</FormInput>
 
             {/* botão de login */}
             <Pressable>
                 <View style={styles.button}>
-                    <Text style={[styles.text, {fontSize: '1.6rem', color: 'white', }]}>
+                    <Text style={[styles.text, {fontSize: '1.1rem', color: 'white', }]}>
                         ENTRAR
                     </Text>
                 </View>
             </Pressable>
 
-            {/* esqueceu a senha + criar conta */}
+            {/* esqueceu a senha e criar conta */}
             <View style={styles.containerAcesso}>
-                <Pressable>
-                    <Text style={styles.text}>
-                        Esqueceu a senha?
-                    </Text>
-                </Pressable>
-                <Pressable>
-                    <Text style={styles.text}>
-                        Crie uma conta aqui!
-                    </Text>
-                </Pressable>
+                <LinkButton>Esqueceu a senha?</LinkButton>
+                <LinkButton>Crie uma conta aqui</LinkButton>
             </View>
-
         </View>
     );
 };
@@ -56,15 +57,14 @@ const FormLogin = () => {
 const styles = StyleSheet.create({
     container: {
         width: '90dvw',
-        height: '55dvh',
+        maxWidth: 450,
         backgroundColor: 'rgba(207, 237, 214, 0.8)',
         borderRadius: 20,
-        paddingHorizontal: 30,
+        
+        padding: 20,
+        gap: 15,
 
-        justifyContent: 'space-evenly',
         alignItems: 'center',
-        gap: 10,
-        paddingVertical: 5,
     },
     text: {
         fontFamily: 'QuickSand',
@@ -82,15 +82,15 @@ const styles = StyleSheet.create({
     button: {
         justifyContent: 'center',
         alignItems: 'center',
-        width: '36dvw',
-        height: '7dvh',
+        paddingHorizontal: 24,
+        paddingVertical: 12,
         backgroundColor: '#165925',
-        borderRadius: 20,
+        borderRadius: 15,
     },
     containerAcesso: {
         justifyContent: 'center',
         alignItems: 'center',
-        gap: 7,
+        gap: 5,
     }
 });
 
