@@ -41,15 +41,14 @@ const FormCadastro = (props) => {
             <Pressable>
                 <View style={styles.button}>
                     <Text style={[styles.text, {fontSize: '1.1rem', color: 'white', }]}>
-                        ENTRAR
+                        CRIAR CONTA
                     </Text>
                 </View>
             </Pressable>
 
             {/* esqueceu a senha e criar conta */}
             <View style={styles.containerAcesso}>
-                <LinkButton>Esqueceu a senha?</LinkButton>
-                <LinkButton>Crie uma conta aqui</LinkButton>
+                <LinkButton onPress={() => props.navigation.navigate('Login')}>Fazer login</LinkButton>
             </View>
         </View>
     );
@@ -93,7 +92,6 @@ const styles = StyleSheet.create({
     containerAcesso: {
         justifyContent: 'center',
         alignItems: 'center',
-        gap: 5,
     }
 });
 

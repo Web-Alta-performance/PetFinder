@@ -1,7 +1,7 @@
 import { StyleSheet, View, ImageBackground } from 'react-native';
 import FormLogin from '../components/FormLogin';
 
-const Login = () => {
+const Login = (props) => {
     return (
         <View style={styles.background}>
             <ImageBackground
@@ -15,7 +15,7 @@ const Login = () => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     }}>
-                     <FormLogin/>
+                     <FormLogin navigation={props.navigation}/>
                  </View>
             </ImageBackground>
         </View>
