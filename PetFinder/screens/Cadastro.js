@@ -1,7 +1,7 @@
 import { StyleSheet, View, ImageBackground } from 'react-native';
 import FormCadastro from '../components/FormCadastro';
 
-const Cadastro = (props) => {
+const Cadastro = ({ navigation }) => {
     return (
         <View style={styles.background}>
             <ImageBackground
@@ -15,7 +15,7 @@ const Cadastro = (props) => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     }}>
-                     <FormCadastro navigation={props.navigation}/>
+                     <FormCadastro navigation={navigation}/>
                  </View>
             </ImageBackground>
         </View>

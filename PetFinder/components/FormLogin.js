@@ -22,8 +22,8 @@ const LinkButton = (props) => {
     );
 };
 
-const FormLogin = (props) => {
-    
+const FormLogin = ({ navigation }, props) => {
+
     const [fontsLoaded] = useFonts({
         'Quicksand': require('../assets/fonts/Quicksand.ttf')
     });
@@ -48,7 +48,7 @@ const FormLogin = (props) => {
             {/* esqueceu a senha e criar conta */}
             <View style={styles.containerAcesso}>
                 <LinkButton>Esqueceu a senha?</LinkButton>
-                <LinkButton onPress={() => props.navigation.navigate('Cadastro')}>Crie uma conta aqui</LinkButton>
+                <LinkButton onPress={() => navigation.navigate('Cadastro')}>Crie uma conta aqui</LinkButton>
             </View>
         </View>
     );
