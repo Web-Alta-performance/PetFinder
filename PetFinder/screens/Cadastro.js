@@ -1,21 +1,21 @@
 import { StyleSheet, View, ImageBackground } from 'react-native';
-import FormLogin from '../components/FormLogin';
+import FormCadastro from '../components/FormCadastro';
 
-const Login = () => {
+const Cadastro = () => {
     return (
         <View style={styles.background}>
             <ImageBackground
-                source={require('../assets/cachorroLogin.avif')}
-                style={{flex: 1}}
+                source={require('../assets/gatoCadastro.jpg')}
+                style={{flex: 1, width: '100vw', height: '100vh'}}
                 blurRadius={1.5}
             >
                  <View style={{
-                    backgroundColor: 'rgba(0, 0, 0, 0.35)',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
                     flex: 1,
                     justifyContent: 'center',
                     alignItems: 'center',
                     }}>
-                     <FormLogin/>
+                     <FormCadastro/>
                  </View>
             </ImageBackground>
         </View>
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Login;
+export default Cadastro;

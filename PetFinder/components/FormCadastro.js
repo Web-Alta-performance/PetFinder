@@ -22,7 +22,7 @@ const LinkButton = (props) => {
     );
 };
 
-const FormLogin = (props) => {
+const FormCadastro = (props) => {
     
     const [fontsLoaded] = useFonts({
         'Quicksand': require('../assets/fonts/Quicksand.ttf')
@@ -35,6 +35,7 @@ const FormLogin = (props) => {
             {/* Campo de formulário */}
             <FormInput>E-mail</FormInput>
             <FormInput secure>Senha</FormInput>
+            <FormInput secure>Confirmar senha</FormInput>
 
             {/* botão de login */}
             <Pressable>
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     container: {
         width: '90dvw',
         maxWidth: 450,
-        backgroundColor: 'rgba(207, 237, 214, 0.75)',
+        backgroundColor: 'rgba(239, 233, 199, 0.75)',
         borderRadius: 20,
         
         padding: 20,
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: 24,
         paddingVertical: 12,
-        backgroundColor: '#165925',
+        backgroundColor: '#1F5916',
         borderRadius: 15,
         marginTop: 5,
     },
@@ -96,4 +97,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default FormLogin;
+export default FormCadastro;
