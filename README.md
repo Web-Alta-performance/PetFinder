@@ -23,9 +23,8 @@ No diretório `/PetFinder`:
 5. Escanear o QR Code pelo aplicativo `Expo Go`.
 
 ### Executando o código na web
-4. Executar `npx expo install react-dom react-native-web @expo/metro-runtime`, caso nunca o tenha executado;
-5. Executar `npx expo start`;
-6. Pressionar `W`.
+4. Executar `npx expo start`;
+5. Pressionar `W`.
 
 ## Equipe
 * Carlos Alberto Ramalho - 01585045
