@@ -21,12 +21,11 @@ No diretório `/PetFinder`:
 
 ### Executando o código no mobile
 Há duas alternativas. Você pode:
-  - Escanear o código QR pelo aplicativo `Expo Go`
-Ou...
+  - Escanear o código QR pelo aplicativo `Expo Go`, ou...
   - Pressionar `A`, caso tenha um emulador Android instalado.
 
 ### Executando o código na web
-5. Pressionar `W`.
+  - Pressionar `W`.
 
 ## Equipe
 * Carlos Alberto Ramalho - 01585045
