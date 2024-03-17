@@ -1,5 +1,5 @@
 import { StyleSheet, View, Image } from 'react-native';
-import FormSignUp from '../components/FormSignUp';
+import FormSignUp from '../components/LoginForms/FormSignUp';
 
 const SignUp = ({ navigation }) => {
     return (

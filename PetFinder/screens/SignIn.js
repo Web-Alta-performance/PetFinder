@@ -1,16 +1,17 @@
 import { StyleSheet, View, Image } from 'react-native';
-import FormSignIn from '../components/FormSignIn';
+import FormSignIn from '../components/LoginForms/FormSignIn';
 
 const SignIn = ({ navigation }) => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Image
-                source={require('../assets/signInBackground.avif')}
+                source={require('../assets/signInBackground.jpg')}
                 style={styles.background}
                 blurRadius={1.5}
             />
-            <View style={[styles.background, styles.backgroundOpacity]}/>
-            <FormSignIn navigation={navigation}/>
+            <View style={[styles.background, styles.backgroundOpacity]}>
+                <FormSignIn navigation={navigation}/>
+            </View>
         </View>
     );
 };
