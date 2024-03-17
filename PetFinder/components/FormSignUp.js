@@ -22,7 +22,7 @@ const LinkButton = (props) => {
     );
 };
 
-const FormCadastro = ({ navigation }, props) => {
+const FormSignUp = ({ navigation }, props) => {
     
     const [fontsLoaded] = useFonts({
         'Quicksand': require('../assets/fonts/Quicksand.ttf')
@@ -32,12 +32,12 @@ const FormCadastro = ({ navigation }, props) => {
         <View style={[styles.container, props.style]}>
             <Image source={require('../assets/Logo.png')}/>
             
-            {/* Campo de formulário */}
+            {/* forms */}
             <FormInput>E-mail</FormInput>
             <FormInput secure>Senha</FormInput>
             <FormInput secure>Confirmar senha</FormInput>
 
-            {/* botão de login */}
+            {/* create account button */}
             <Pressable>
                 <View style={styles.button}>
                     <Text style={[styles.text, {fontSize: '1.1rem', color: 'white', }]}>
@@ -46,9 +46,9 @@ const FormCadastro = ({ navigation }, props) => {
                 </View>
             </Pressable>
 
-            {/* esqueceu a senha e criar conta */}
-            <View style={styles.containerAcesso}>
-                <LinkButton onPress={() => navigation.navigate('Login')}>Fazer login</LinkButton>
+            {/* go to login page */}
+            <View style={styles.optionsContainer}>
+                <LinkButton onPress={() => navigation.navigate('SignIn')}>Fazer login</LinkButton>
             </View>
         </View>
     );
@@ -89,10 +89,10 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         marginTop: 5,
     },
-    containerAcesso: {
+    optionsContainer: {
         justifyContent: 'center',
         alignItems: 'center',
     }
 });
 
-export default FormCadastro;
+export default FormSignUp;

@@ -22,7 +22,7 @@ const LinkButton = (props) => {
     );
 };
 
-const FormLogin = ({ navigation }, props) => {
+const FormSignIn = ({ navigation }, props) => {
 
     const [fontsLoaded] = useFonts({
         'Quicksand': require('../assets/fonts/Quicksand.ttf')
@@ -32,11 +32,11 @@ const FormLogin = ({ navigation }, props) => {
         <View style={[styles.container, props.style]}>
             <Image source={require('../assets/Logo.png')}/>
             
-            {/* Campo de formulário */}
+            {/* forms */}
             <FormInput>E-mail</FormInput>
             <FormInput secure>Senha</FormInput>
 
-            {/* botão de login */}
+            {/* login button */}
             <Pressable>
                 <View style={styles.button}>
                     <Text style={[styles.text, {fontSize: '1.1rem', color: 'white', }]}>
@@ -45,10 +45,10 @@ const FormLogin = ({ navigation }, props) => {
                 </View>
             </Pressable>
 
-            {/* esqueceu a senha e criar conta */}
-            <View style={styles.containerAcesso}>
+            {/* go to forgot password and create account pages */}
+            <View style={styles.optionsContainer}>
                 <LinkButton>Esqueceu a senha?</LinkButton>
-                <LinkButton onPress={() => navigation.navigate('Cadastro')}>Crie uma conta aqui</LinkButton>
+                <LinkButton onPress={() => navigation.navigate('SignUp')}>Crie uma conta aqui</LinkButton>
             </View>
         </View>
     );
@@ -89,11 +89,11 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         marginTop: 5,
     },
-    containerAcesso: {
+    optionsContainer: {
         justifyContent: 'center',
         alignItems: 'center',
         gap: 5,
     }
 });
 
-export default FormLogin;
+export default FormSignIn;
