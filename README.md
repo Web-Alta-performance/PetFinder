@@ -17,13 +17,15 @@ No diretório `/PetFinder`:
 1. Ter o ```Node.js``` instalado na máquina;
 2. Abrir o terminal na pasta do projeto;
 3. Executar `npm install`;
+4. Executar `npx expo start`;
 
 ### Executando o código no mobile
-4. Executar `npx expo start`;
-5. Escanear o QR Code pelo aplicativo `Expo Go`.
+Há duas alternativas. Você pode:
+  - Escanear o código QR pelo aplicativo `Expo Go`
+Ou...
+  - Pressionar `A`, caso tenha um emulador Android instalado.
 
 ### Executando o código na web
-4. Executar `npx expo start`;
 5. Pressionar `W`.
 
 ## Equipe
