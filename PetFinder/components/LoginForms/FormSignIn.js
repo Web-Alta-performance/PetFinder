@@ -1,18 +1,18 @@
 import { useState } from 'react';
-import { StyleSheet, View, Image, Text, TextInput, Pressable, Platform } from 'react-native';
+import { StyleSheet, View, Image, Text, TextInput, Pressable } from 'react-native';
 import { useFonts } from 'expo-font';
 import styles from './style'
 
 const FormInput = (props) => {
     return (
         <View style={{ gap: 2, width: '100%', height: 70 }}>
-            <Text style={styles.text}>
+            <Text style={[text.default]}>
                 {props.children}
             </Text>
             <TextInput
                 secureTextEntry={props.secure}
                 multiline={false}
-                style={[styles.input, styles.text]}
+                style={[styles.input, text.default]}
                 onChangeText={t => props.onChange(t)}
                 value={props.value}
                 autoCapitalize="none"
@@ -25,7 +25,7 @@ const FormInput = (props) => {
 const LinkButton = (props) => {
     return (
         <Pressable onPress={props.onPress}>
-            <Text style={styles.text}>
+            <Text style={[text.default]}>
                 {props.children}
             </Text>
         </Pressable>
@@ -33,7 +33,6 @@ const LinkButton = (props) => {
 };
 
 const FormSignIn = ({ navigation }, props) => {
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -54,7 +53,7 @@ const FormSignIn = ({ navigation }, props) => {
             {/* login button */}
             <Pressable onPress={() => console.log(email)}>
                 <View style={[styles.button, { backgroundColor: '#165925',  }]}>
-                    <Text style={[styles.text, {fontSize: 20, color: 'white', }]}>
+                    <Text style={[text.default, {fontSize: 20, color: 'white' }]}>
                         ENTRAR
                     </Text>
                 </View>
@@ -68,5 +67,12 @@ const FormSignIn = ({ navigation }, props) => {
         </View>
     );
 };
+
+const text = StyleSheet.create({
+    default: {
+        fontFamily: 'Quicksand-Bold',
+        fontSize: 15,
+    },
+});
 
 export default FormSignIn;

@@ -7,12 +7,11 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         
         padding: 20,
-        gap: 20,
+        gap: 25,
 
         alignItems: 'center',
     },
     text: {
-        fontFamily: 'Quicksand',
         fontWeight: 'bold',
         fontSize: 15,
     },
@@ -34,7 +33,7 @@ const styles = StyleSheet.create({
     optionsContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        gap: 5,
+        gap: 10,
     }
 });
 

@@ -5,7 +5,7 @@ import LoginStack from './LoginStack';
 const AppNav = () => {
 
     return (
-        <View style={{ flex: 1, backgroundColor: '#333' }}>
+        <View style={{flex: 1, backgroundColor: '#333' }}>
             <NavigationContainer>
                 <LoginStack />
             </NavigationContainer>

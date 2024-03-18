@@ -6,13 +6,13 @@ import styles from './style'
 const FormInput = (props) => {
     return (
         <View style={{ gap: 2, width: '100%', height: 70 }}>
-            <Text style={styles.text}>
+            <Text style={[text.default]}>
                 {props.children}
             </Text>
             <TextInput
                 secureTextEntry={props.secure}
                 multiline={false}
-                style={[styles.input, styles.text]}
+                style={[styles.input, text.default]}
                 onChangeText={t => props.onChange(t)}
                 value={props.value}
                 autoCapitalize="none"
@@ -25,7 +25,7 @@ const FormInput = (props) => {
 const LinkButton = (props) => {
     return (
         <Pressable onPress={props.onPress}>
-            <Text style={styles.text}>
+            <Text style={[text.default]}>
                 {props.children}
             </Text>
         </Pressable>
@@ -56,7 +56,7 @@ const FormSignUp = ({ navigation }, props) => {
             {/* create account button */}
             <Pressable onPress={() => console.log(email)}>
                 <View style={[styles.button, { backgroundColor: '#1F5916' }]}>
-                    <Text style={[styles.text, {fontSize: 20, color: 'white', }]}>
+                    <Text style={[text.default, {fontSize: 20, color: 'white', }]}>
                         ENTRAR
                     </Text>
                 </View>
@@ -69,5 +69,12 @@ const FormSignUp = ({ navigation }, props) => {
         </View>
     );
 };
+
+const text = StyleSheet.create({
+    default: {
+        fontFamily: 'Quicksand-Bold',
+        fontSize: 15,
+    },
+});
 
 export default FormSignUp;

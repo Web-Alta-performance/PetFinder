@@ -2,6 +2,7 @@ import { StyleSheet, View, Image } from 'react-native';
 import FormSignIn from '../components/LoginForms/FormSignIn';
 
 const SignIn = ({ navigation }) => {
+
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Image
@@ -9,9 +10,8 @@ const SignIn = ({ navigation }) => {
                 style={styles.background}
                 blurRadius={1.5}
             />
-            <View style={[styles.background, styles.backgroundOpacity]}>
-                <FormSignIn navigation={navigation}/>
-            </View>
+            <View style={[styles.background, styles.backgroundOpacity]}/>
+            <FormSignIn navigation={navigation}/>
         </View>
     );
 };
