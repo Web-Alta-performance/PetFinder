@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { StyleSheet, View, Image, Text, TextInput, Pressable } from 'react-native';
-import { useFonts } from 'expo-font';
 import styles from './style'
 
 const FormInput = (props) => {
@@ -35,12 +34,6 @@ const LinkButton = (props) => {
 const FormSignIn = ({ navigation }, props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    const [fontsLoaded] = useFonts({
-        'Quicksand': require('../../assets/fonts/Quicksand.ttf')
-    });
-    
-    if (!fontsLoaded) return null;
 
     return (
         <View style={[styles.container, { backgroundColor: 'rgba(207, 237, 214, 0.75)' }, props.style]}>

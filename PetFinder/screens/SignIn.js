@@ -1,13 +1,15 @@
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, useWindowDimensions, View, Image } from 'react-native';
 import FormSignIn from '../components/LoginForms/FormSignIn';
 
 const SignIn = ({ navigation }) => {
 
+    const { height } = useWindowDimensions();
+    
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Image
                 source={require('../assets/signInBackground.jpg')}
-                style={styles.background}
+                style={[styles.background, { height }]}
                 blurRadius={1.5}
             />
             <View style={[styles.background, styles.backgroundOpacity]}/>

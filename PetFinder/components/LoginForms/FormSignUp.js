@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, View, Image, Text, TextInput, Pressable, Platform } from 'react-native';
-import { useFonts } from 'expo-font';
+import { StyleSheet, View, Image, Text, TextInput, Pressable } from 'react-native';
 import styles from './style'
 
 const FormInput = (props) => {
@@ -38,12 +37,6 @@ const FormSignUp = ({ navigation }, props) => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const [fontsLoaded] = useFonts({
-        'Quicksand': require('../../assets/fonts/Quicksand.ttf')
-    });
-    
-    if (!fontsLoaded) return null;
-
     return (
         <View style={[styles.container, { backgroundColor: 'rgba(239, 233, 199, 0.75)' }, props.style]}>
             <Image source={require('../../assets/Logo.png')}/>
@@ -57,7 +50,7 @@ const FormSignUp = ({ navigation }, props) => {
             <Pressable onPress={() => console.log(email)}>
                 <View style={[styles.button, { backgroundColor: '#1F5916' }]}>
                     <Text style={[text.default, {fontSize: 20, color: 'white', }]}>
-                        ENTRAR
+                        CRIAR CONTA
                     </Text>
                 </View>
             </Pressable>
