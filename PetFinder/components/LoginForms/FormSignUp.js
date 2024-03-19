@@ -39,7 +39,6 @@ const FormSignUp = ({ navigation }, props) => {
 
     return (
         <View style={[styles.container, { backgroundColor: 'rgba(239, 233, 199, 0.75)' }, props.style]}>
-            <Image source={require('../../assets/Logo.png')}/>
             
             {/* forms */}
             <FormInput onChange={setEmail}>E-mail</FormInput>

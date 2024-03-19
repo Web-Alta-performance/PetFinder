@@ -31,30 +31,29 @@ const LinkButton = (props) => {
     );
 };
 
-const FormSignIn = ({ navigation }, props) => {
+const FormForgotPassword = ({ navigation }, props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     return (
-        <View style={[styles.container, { backgroundColor: 'rgba(207, 237, 214, 0.75)' }, props.style]}>
+        <View style={[styles.container, { backgroundColor: 'rgba(203, 207, 180, 0.65)' }, props.style]}>
             
             {/* forms */}
             <FormInput onChange={setEmail}>E-mail</FormInput>
-            <FormInput secure onChange={setPassword} value={password}>Senha</FormInput>
+            <FormInput secure onChange={setPassword} value={password}>Nova senha</FormInput>
 
             {/* login button */}
             <Pressable onPress={() => console.log(email)}>
-                <View style={[styles.button, { backgroundColor: '#165925',  }]}>
+                <View style={[styles.button, { backgroundColor: '#3D641E',  }]}>
                     <Text style={[text.default, { fontSize: 20, color: 'white' }]}>
-                        ENTRAR
+                        ALTERAR SENHA
                     </Text>
                 </View>
             </Pressable>
 
             {/* go to forgot password and create account pages */}
             <View style={styles.optionsContainer}>
-                <LinkButton onPress={() => navigation.navigate('ForgotPassword')}>Esqueceu a senha?</LinkButton>
-                <LinkButton onPress={() => navigation.navigate('SignUp')}>Crie uma conta aqui</LinkButton>
+                <LinkButton onPress={() => navigation.navigate('SignIn')}>Fazer login</LinkButton>
             </View>
         </View>
     );
@@ -67,4 +66,4 @@ const text = StyleSheet.create({
     },
 });
 
-export default FormSignIn;
+export default FormForgotPassword;

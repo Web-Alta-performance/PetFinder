@@ -1,24 +1,24 @@
 import { StyleSheet, useWindowDimensions, View, Image, Text } from 'react-native';
-import FormSignIn from '../components/LoginForms/FormSignIn';
+import FormForgotPassword from '../components/LoginForms/FormForgotPassword';
 
-const SignIn = ({ navigation }) => {
+const ForgotPassword = ({ navigation }) => {
 
     const { height } = useWindowDimensions();
-    
+
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Image
-                source={require('../assets/signInBackground.jpg')}
+                source={require('../assets/forgotPasswordBackground.jpg')}
                 style={[styles.background, { height }]}
-                blurRadius={1.5}
+                blurRadius={3}
             />
-            <View style={[styles.background, { backgroundColor: 'rgba(0, 0, 0, 0.35)' }]}/>
+            <View style={[styles.background, { backgroundColor: 'rgba(0, 0, 0, 0.40)' }]}/>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', width: '100%', gap: 30, }}>
                 <View style={{alignItems: 'center', gap: 5,}}>
                     <Image source={require('../assets/Logo.png')}/>
-                    <Text style={{fontFamily: 'Quicksand-Bold', color: 'white', fontSize: 40,}}>Entrar</Text>
+                    <Text style={{fontFamily: 'Quicksand-Bold', color: 'white', fontSize: 40,}}>Esqueci a senha</Text>
                 </View>
-                <FormSignIn navigation={navigation}/>
+                <FormForgotPassword navigation={navigation}/>
             </View>
         </View>
     );
@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default SignIn;
+export default ForgotPassword;
