@@ -49,7 +49,7 @@ const FormSignUp = ({ navigation }, props) => {
             {/* create account button */}
             <Pressable onPress={() => console.log(email)}>
                 <View style={[styles.button, { backgroundColor: '#1F5916' }]}>
-                    <Text style={[text.default, {fontSize: 20, color: 'white', }]}>
+                    <Text style={[text.default, { fontSize: 20, color: 'white', }]}>
                         CRIAR CONTA
                     </Text>
                 </View>

@@ -1,6 +1,6 @@
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { useCallback } from 'react';
 import Router from './routes/router';
 
@@ -8,10 +8,10 @@ SplashScreen.preventAutoHideAsync();
 
 const App = () => {
   const [fontsLoaded, fontError] = Font.useFonts({
-    'Quicksand-Bold': require('./assets/fonts/Quicksand_Bold.otf'),
-    'Quicksand-Medium': require('./assets/fonts/Quicksand_Medium.otf'),
-    'Quicksand': require('./assets/fonts/Quicksand_Medium.otf'),
-    'Quicksand-Light': require('./assets/fonts/Quicksand_Light.otf'),
+    'Quicksand-Bold': require('./assets/fonts/Quicksand-Bold.ttf'),
+    'Quicksand-Medium': require('./assets/fonts/Quicksand-Medium.ttf'),
+    'Quicksand': require('./assets/fonts/Quicksand-Regular.ttf'),
+    'Quicksand-Light': require('./assets/fonts/Quicksand-Light.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {

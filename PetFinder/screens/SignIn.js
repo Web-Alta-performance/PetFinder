@@ -12,7 +12,7 @@ const SignIn = ({ navigation }) => {
                 style={[styles.background, { height }]}
                 blurRadius={1.5}
             />
-            <View style={[styles.background, styles.backgroundOpacity]}/>
+            <View style={[styles.background, { backgroundColor: 'rgba(0, 0, 0, 0.35)' }]}/>
             <FormSignIn navigation={navigation}/>
         </View>
     );
@@ -25,11 +25,6 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         overflow: 'hidden',
-    },
-    backgroundOpacity: {
-        backgroundColor: 'rgba(0, 0, 0, 0.35)',
-        justifyContent: 'center',
-        alignItems: 'center',
     },
 });
 
