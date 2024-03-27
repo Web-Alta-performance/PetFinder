@@ -3,13 +3,11 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, View } from 'react-native';
 
 const GradientBorderView = ({
-    width,
-    height,
     borderWidth,
     borderRadius,
     gradientProps,
     style,
-    ...props
+    children
 }
 ) => {
     let padding = style.padding ?? 0;
@@ -20,7 +18,7 @@ const GradientBorderView = ({
 
     return (
         <View style={[{...style}, { borderWidth: 0, borderRadius: 0, padding, backgroundColor: 'transparent' }]}>
-            {props.children}
+            {children}
             <MaskedView
                 maskElement={(
                     <View

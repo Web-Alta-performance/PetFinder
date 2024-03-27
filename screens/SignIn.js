@@ -1,5 +1,5 @@
 import { StyleSheet, useWindowDimensions, View, Image, Text } from 'react-native';
-import FormSignIn from '../components/LoginForms/FormSignIn';
+import SignInForm from '../components/LoginForms/SignInForm';
 
 const SignIn = ({ navigation }) => {
 
@@ -12,7 +12,7 @@ const SignIn = ({ navigation }) => {
                 style={[styles.background, { height }]}
             />
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', width: '100%', gap: 30, }}>
-                <FormSignIn navigation={navigation} style={{width: 200, height: 200, borderWidth: 3, borderRadius: 10,}}/>
+                <SignInForm navigation={navigation}/>
             </View>
         </View>
     );
