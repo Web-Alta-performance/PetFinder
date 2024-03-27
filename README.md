@@ -1,6 +1,7 @@
 # PROJETO - MOBILE CODING
 
 ### Acesse o repositório da API [aqui](https://github.com/Web-Alta-performance/PetFinder-api).
+### Acesse o repositório do website [aqui](https://github.com/Web-Alta-performance/PetFinder-website).
 
 # PetFinder
 Seções:
