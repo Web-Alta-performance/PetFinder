@@ -10,15 +10,9 @@ const SignIn = ({ navigation }) => {
             <Image
                 source={require('../assets/signInBackground.jpg')}
                 style={[styles.background, { height }]}
-                blurRadius={1.5}
             />
-            <View style={[styles.background, { backgroundColor: 'rgba(0, 0, 0, 0.35)' }]}/>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', width: '100%', gap: 30, }}>
-                <View style={{alignItems: 'center', gap: 5,}}>
-                    <Image source={require('../assets/Logo.png')}/>
-                    <Text style={{fontFamily: 'Quicksand-Bold', color: 'white', fontSize: 40,}}>Entrar</Text>
-                </View>
-                <FormSignIn navigation={navigation}/>
+                <FormSignIn navigation={navigation} style={{width: 200, height: 200, borderWidth: 3, borderRadius: 10,}}/>
             </View>
         </View>
     );
