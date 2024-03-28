@@ -16,14 +16,25 @@ const formStyle = StyleSheet.create({
     text: {
         color: 'white',
         fontFamily: 'Quicksand-Bold',
-        fontSize: 20,
+        fontSize: 17,
+
+        zIndex: 10,
     },
     buttonText: {
         color: 'white',
         fontFamily: 'Quicksand-Bold',
         fontSize: 15,
-        fontSize: 25,
+        fontSize: 23,
+
+        zIndex: 10,
     },
+    linkText: {
+        color: 'white',
+        fontFamily: 'Quicksand-Bold',
+        fontSize: 17,
+
+        zIndex: 10,
+    }, 
 
     // ui
     input: {
@@ -35,6 +46,7 @@ const formStyle = StyleSheet.create({
         borderRadius: 10,
         height: 40,
         paddingHorizontal: 10,
+        
         zIndex: 10,
     },
     button: {
@@ -42,7 +54,7 @@ const formStyle = StyleSheet.create({
         alignItems: 'center',
         
         marginTop: 15,
-
+        
         paddingHorizontal: 24,
         paddingTop: 10,
         paddingBottom: 12,
@@ -56,8 +68,13 @@ const formStyle = StyleSheet.create({
         },
         shadowOpacity: 0.30,
         shadowRadius: 4.65,
-
+        
         elevation: 8,
+        
+        zIndex: 10,
+    },
+    link: {
+        zIndex: 10,
     }
 });
 

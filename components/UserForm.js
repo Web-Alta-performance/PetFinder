@@ -1,7 +1,7 @@
 import { Pressable, Text, TextInput, View } from 'react-native';
 import GlassView from './GlassView';
 
-const FormUserInput = ({value, secure, onChange, children, style}, props) => {
+export const FormUserInput = ({value, secure, onChange, children, style}, props) => {
     return (
         <View style={{ gap: 10, width: '100%', alignItems: 'center' }}>
             <Text style={style.text}>
@@ -19,10 +19,10 @@ const FormUserInput = ({value, secure, onChange, children, style}, props) => {
     )
 }
 
-const FormUserButton = ({onPress, style, children, color}, props) => {
+export const FormUserButton = ({onPress, style, children, color}, props) => {
     const buttonBg = {backgroundColor: color}
     return (
-        <Pressable onPress={onPress}>
+        <Pressable onPress={() => onPress()}>
             <View style={{...style.button, ...buttonBg}}>
                 <Text style={style.buttonText}>{children}</Text>
             </View>
@@ -30,15 +30,15 @@ const FormUserButton = ({onPress, style, children, color}, props) => {
     )
 }
 
-const FormUserLink = ({onPress, style, children}, props) => {
+export const FormUserLink = ({onPress, style, children}, props) => {
     return (
-        <Pressable onPress={onPress}>
-            <Text style={style.text}>{children}</Text>
+        <Pressable onPress={onPress} style={style.link}>
+            <Text style={style.linkText}>{children}</Text>
         </Pressable>
     )
 }
 
-const UserForm = ({ style, children, height }) => {
+export const UserForm = ({ style, children, height }) => {
 
     return (
         <GlassView
@@ -54,6 +54,3 @@ const UserForm = ({ style, children, height }) => {
         </GlassView>
     );
 };
-
-
-export { UserForm, FormUserInput, FormUserButton, FormUserLink };
