@@ -14,7 +14,6 @@ O design deste projeto foi criado a partir da ferramenta Figma. É possível ace
 
 ## Executando o projeto
 ### Passo a passo de como utilizar o código
-No diretório `/PetFinder`:
 1. Ter o ```Node.js``` instalado na máquina;
 2. Abrir o terminal na pasta do projeto;
 3. Executar `npm install`;

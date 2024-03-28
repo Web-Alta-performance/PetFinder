@@ -1,5 +1,5 @@
 import { StyleSheet, useWindowDimensions, View, Image, Text } from 'react-native';
-import FormSignIn from '../components/LoginForms/FormSignIn';
+import SignInForm from '../components/LoginForms/SignInForm';
 
 const SignIn = ({ navigation }) => {
 
@@ -10,15 +10,9 @@ const SignIn = ({ navigation }) => {
             <Image
                 source={require('../assets/signInBackground.jpg')}
                 style={[styles.background, { height }]}
-                blurRadius={1.5}
             />
-            <View style={[styles.background, { backgroundColor: 'rgba(0, 0, 0, 0.35)' }]}/>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', width: '100%', gap: 30, }}>
-                <View style={{alignItems: 'center', gap: 5,}}>
-                    <Image source={require('../assets/Logo.png')}/>
-                    <Text style={{fontFamily: 'Quicksand-Bold', color: 'white', fontSize: 40,}}>Entrar</Text>
-                </View>
-                <FormSignIn navigation={navigation}/>
+                <SignInForm navigation={navigation}/>
             </View>
         </View>
     );
