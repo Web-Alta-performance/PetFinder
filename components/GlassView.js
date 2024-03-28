@@ -7,15 +7,14 @@ const GlassView = ({ gradientProps, style, children }, props) => {
     const borderRadius = style.borderRadius ? style.borderRadius : 0;
     const fullSize = { flex: 1, justifyContent: 'center', alignItems: 'center' };
     const noBorder = { borderWidth: 0 };
-    const tint = props.tint ? props.tint : 'systemChromeMaterialLight'
     
     return (
         <View style={[{...style}, noBorder]}>
             <BlurView
-                experimentalBlurMethod={ Platform.OS === 'android' ? 'dimezisBlurView' : 'none' }
+                experimentalBlurMethod={ Platform.OS === 'android' ? 'none' : 'none' }
                 style={[{...style}, fullSize, noBorder, { borderRadius }]}
                 intensity={intensity}
-                tint={tint}
+                tint={props.tint ? props.tint : 'default'}
             >
                 <GradientBorder
                     gradientProps={gradientProps}

@@ -30,15 +30,24 @@ const FormUserButton = ({onPress, style, children, color}, props) => {
     )
 }
 
-const UserForm = ({ style, children }) => {
+const FormUserLink = ({onPress, style, children}, props) => {
+    return (
+        <Pressable onPress={onPress}>
+            <Text style={style.text}>{children}</Text>
+        </Pressable>
+    )
+}
+
+const UserForm = ({ style, children, height }) => {
 
     return (
         <GlassView
-            style={{justifyContent: 'center', alignItems: 'center', ...style}}
+            style={{justifyContent: 'center', alignItems: 'center', ...style, height}}
+            tint={'systemThickMaterialLight'}
             gradientProps={{
-                colors: ['rgba(255, 255, 255, 0.6)', 'transparent'],
+                colors: ['rgba(255, 255, 255, 0.5)', 'rgba(255, 255, 255, 0.0)'],
                 start: { x: 0, y: 0 },
-                end: { x: 0.35, y: 1.1 }
+                end: { x: 0.75, y: 1 }
             }}
             >
             {children}
@@ -47,4 +56,4 @@ const UserForm = ({ style, children }) => {
 };
 
 
-export { UserForm, FormUserInput, FormUserButton };
+export { UserForm, FormUserInput, FormUserButton, FormUserLink };
