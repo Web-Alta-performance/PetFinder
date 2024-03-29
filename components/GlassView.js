@@ -1,20 +1,24 @@
-import { Platform, View } from 'react-native';
+import { View } from 'react-native';
 import GradientBorder from './GradientBorder';
 import { BlurView } from 'expo-blur';
 
-const GlassView = ({ gradientProps, style, children }, props) => {
-    const intensity = props.intensity ? props.intensity : 10;
-    const borderRadius = style.borderRadius ? style.borderRadius : 0;
+const GlassView = ({
+    intensity = 15,
+    borderRadius = 0,
+    tint = 'default',
+    gradientProps,
+    style,
+    children
+}) => {
     const fullSize = { flex: 1, justifyContent: 'center', alignItems: 'center' };
     const noBorder = { borderWidth: 0 };
     
     return (
         <View style={[{...style}, noBorder]}>
             <BlurView
-                experimentalBlurMethod={ Platform.OS === 'android' ? 'none' : 'none' }
                 style={[{...style}, fullSize, noBorder, { borderRadius }]}
                 intensity={intensity}
-                tint={props.tint ? props.tint : 'default'}
+                tint={tint}
             >
                 <GradientBorder
                     gradientProps={gradientProps}
