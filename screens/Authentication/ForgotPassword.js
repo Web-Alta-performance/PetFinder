@@ -1,5 +1,5 @@
 import { StyleSheet, useWindowDimensions, View, Image, Text } from 'react-native';
-import ForgotPasswordForm from '../components/LoginForms/ForgotPasswordForm';
+import ForgotPasswordForm from '../../components/LoginForms/ForgotPasswordForm';
 
 const ForgotPassword = ({ navigation }) => {
 
@@ -8,11 +8,11 @@ const ForgotPassword = ({ navigation }) => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Image
-                source={require('../assets/forgotPasswordBackground.jpg')}
+                source={require('../../assets/forgotPasswordBackground.jpg')}
                 style={[styles.background, { height }]}
             />
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', width: '100%', gap: 30, }}>
-                <ForgotPasswordForm navigation={navigation}/>
+                <ForgotPasswordForm navigation={navigation} />
             </View>
         </View>
     );

@@ -1,18 +1,18 @@
 import { StyleSheet, useWindowDimensions, View, Image, Text } from 'react-native';
-import SignInForm from '../components/LoginForms/SignInForm';
+import SignUpForm from '../../components/LoginForms/SignUpForm';
 
-const SignIn = ({ navigation }) => {
+const SignUp = ({ navigation }) => {
 
     const { height } = useWindowDimensions();
-    
+
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Image
-                source={require('../assets/signInBackground.jpg')}
+                source={require('../../assets/signUpBackground.jpg')}
                 style={[styles.background, { height }]}
             />
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', width: '100%', gap: 30, }}>
-                <SignInForm navigation={navigation}/>
+                <SignUpForm navigation={navigation} />
             </View>
         </View>
     );
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default SignIn;
+export default SignUp;
