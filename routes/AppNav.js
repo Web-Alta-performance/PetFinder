@@ -1,13 +1,21 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { View } from 'react-native';
+import { AuthContext } from '../context/AuthContext';
+import { useContext } from 'react';
+
+// stacks
+import MainStack from './MainStack';
 import LoginStack from './LoginStack';
 
 const AppNav = () => {
 
+    const { userToken } = useContext(AuthContext);
+    console.log(userToken)
+
     return (
-        <View style={{flex: 1, backgroundColor: '#333' }}>
+        <View style={{ flex: 1, backgroundColor: '#333' }}>
             <NavigationContainer>
-                <LoginStack />
+                {userToken ? <MainStack /> : <LoginStack />}
             </NavigationContainer>
         </View>
     )
