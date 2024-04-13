@@ -1,9 +1,9 @@
 import { View } from 'react-native';
-import { UserForm, FormUserInput, FormUserButton, FormUserLink } from '../UserForm';
+import { UserForm, FormUserInput, FormUserButton, FormUserLink } from '../UserForm/UserForm';
 import { useState } from 'react';
 
 const ForgotPasswordForm = ({ navigation }) => {
-    {/* TODO: use UseContext hook to avoid these types of prop */}
+    {/* TODO: use UseContext hook to avoid these types of prop */ }
 
     const [email, setEmail] = useState('');
     const [newPassword, setNewPassword] = useState('');

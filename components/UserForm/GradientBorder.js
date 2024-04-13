@@ -17,7 +17,7 @@ const GradientBorderView = ({
     if (!style) style = {}
 
     return (
-        <View style={[{...style}, { borderWidth: 0, borderRadius: 0, padding, backgroundColor: 'transparent' }]}>
+        <View style={[{ ...style }, { borderWidth: 0, borderRadius: 0, padding, backgroundColor: 'transparent' }]}>
             {children}
             <MaskedView
                 maskElement={(
@@ -25,7 +25,7 @@ const GradientBorderView = ({
                         pointerEvents='none'
                         style={[
                             { borderWidth, borderRadius },
-                            {...style},
+                            { ...style },
                             StyleSheet.absoluteFill,
                         ]}
                     />
