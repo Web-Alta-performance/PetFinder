@@ -23,7 +23,7 @@ export const FormUserInput = ({ value, secure, onChange, children }) => {
 export const FormUserButton = ({ onPress, children, color }) => {
     const buttonBg = { backgroundColor: color }
     return (
-        <Pressable onPress={() => onPress()}>
+        <Pressable style={Foreground} onPress={() => onPress()}>
             <View style={[{ ...styles.button, ...buttonBg }, Foreground]}>
                 <Text style={[styles.buttonText, Foreground]}>{children}</Text>
             </View>
