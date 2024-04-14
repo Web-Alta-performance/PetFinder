@@ -8,6 +8,13 @@ const ForgotPasswordForm = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [newPassword, setNewPassword] = useState('');
 
+    const handleButtonPress = () => {
+        if (!email || !newPassword) {
+            alert('Por favor, preencha todos os campos')
+            return;
+        }
+    }
+
     return (
         <UserForm
             height={370}
@@ -15,7 +22,7 @@ const ForgotPasswordForm = ({ navigation }) => {
         >
             <FormUserInput onChange={setEmail} value={email}>E-MAIL</FormUserInput>
             <FormUserInput onChange={setNewPassword} value={newPassword} secure>NOVA SENHA</FormUserInput>
-            <FormUserButton color={'#E59466'}>ALTERAR SENHA</FormUserButton>
+            <FormUserButton color={'#E59466'} onPress={(handleButtonPress)}>ALTERAR SENHA</FormUserButton>
             <View style={{
                 alignItems: 'center',
                 justifyContent: 'center',
