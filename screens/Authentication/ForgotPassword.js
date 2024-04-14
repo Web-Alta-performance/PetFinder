@@ -13,7 +13,7 @@ const ForgotPassword = ({ navigation }) => {
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 
             {/* LOGO */}
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', position: 'absolute', top: 50, }}>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: height - 150, }}>
                 <Image source={require('../../assets/Logo.png')} style={{ zIndex: 5, width: 100, height: 100 }} />
             </View>
 

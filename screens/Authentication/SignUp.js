@@ -22,7 +22,7 @@ const SignUp = ({ navigation }) => {
             </View>
 
             {/* APP INFO MODAL */}
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: 50, }}>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', position: 'absolute', top: height - 75, }}>
                 <FormUserLink onPress={() => setInfoVisible(!infoVisible)}>
                     Petfinder v0.0
                 </FormUserLink>
