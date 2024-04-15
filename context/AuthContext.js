@@ -1,12 +1,12 @@
 import { createContext, useState } from 'react';
-import { registerUser, userChangePassword, userLogin } from '../services/api';
+import { userChangePassword, userLogin, userRegister } from '../services/api';
 import { AxiosError } from 'axios';
 
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
 
-    const [userToken, setUserToken] = useState();
+    const [userToken, setUserToken] = useState('');
     const [userInfo, setUserInfo] = useState();
 
     const register = async ({
@@ -15,7 +15,7 @@ const AuthProvider = ({ children }) => {
         password,
     }) => {
         try {
-            await registerUser({
+            await userRegister({
                 name,
                 email,
                 password
