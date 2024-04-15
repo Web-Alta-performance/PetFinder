@@ -36,7 +36,6 @@ const AuthProvider = ({ children }) => {
             } else {
                 console.log(error.toJSON());
             }
-            throw error;
         }
     }
 
@@ -65,7 +64,6 @@ const AuthProvider = ({ children }) => {
             } else {
                 console.log(error.toJSON());
             }
-            throw error;
         }
     };
 
@@ -90,7 +88,6 @@ const AuthProvider = ({ children }) => {
             } else {
                 console.log(error.toJSON());
             }
-            throw error;
         }
     };
 

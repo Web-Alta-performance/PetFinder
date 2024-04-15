@@ -16,7 +16,7 @@ const SignInForm = ({ navigation }) => {
             return;
         }
 
-        await login({ email, password }).catch(error => console.log(error));
+        await login({ email, password });
     };
 
     return (
