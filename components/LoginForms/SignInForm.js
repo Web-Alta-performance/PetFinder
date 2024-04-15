@@ -1,19 +1,22 @@
 import { View } from 'react-native';
 import { UserForm, FormUserInput, FormUserButton, FormUserLink } from '../UserForm/UserForm';
-import { useState } from 'react';
-import axios from 'axios';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 const SignInForm = ({ navigation }) => {
-    {/* TODO: use UseContext hook to avoid these types of prop */ }
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleButtonPress = () => {
+    const { login } = useContext(AuthContext);
+
+    const handleButtonPress = async () => {
         if (!email || !password) {
             alert('Por favor, preencha todos os campos');
             return;
         }
+
+        await login({ email, password }).catch(error => console.log(error));
     };
 
     return (
