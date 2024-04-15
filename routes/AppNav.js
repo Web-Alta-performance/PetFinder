@@ -10,7 +10,6 @@ import LoginStack from './LoginStack';
 const AppNav = () => {
 
     const { userToken } = useContext(AuthContext);
-    console.log(userToken)
 
     return (
         <View style={{ flex: 1, backgroundColor: '#333' }}>
