@@ -1,17 +1,16 @@
 import { View } from 'react-native';
 import { UserForm, FormUserInput, FormUserButton, FormUserLink } from '../UserForm/UserForm';
 import { useState } from 'react';
-import { registerUser } from '../../services/api';
+import { registerUser, userRegister } from '../../services/api';
 
 const SignInForm = ({ navigation }) => {
-    {/* TODO: use UseContext hook to avoid these types of prop */ }
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleButtonPress = () => {
+    const handleButtonPress = async () => {
         // check if form is filled
         if (!name
             || !email
@@ -21,12 +20,15 @@ const SignInForm = ({ navigation }) => {
             return;
         }
 
-        // check password and confirm password
+        // check if password and confirm password matches
         if (password !== confirmPassword) {
             alert('As senhas não coincidem');
             return;
         }
 
+        await userRegister({ name, email, password }).then(() => {
+            navigation.navigate('SignIn');
+        });
     };
 
     return (
