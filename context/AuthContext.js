@@ -22,12 +22,21 @@ const AuthProvider = ({ children }) => {
             });
         } catch (error) {
             if (error instanceof AxiosError) {
-                if (error.response.status === 400) {
-                    return console.log(error.response.data)
+                switch (error.response.status) {
+                    case 400:
+                        alert('E-mail inválido.');
+                        console.log(error.response.data);
+                        break;
+                    case 401:
+                        alert('Já existe um usuário com este e-mail.');
+                        break;
+
+                    default: alert('Ops, algo deu errado!');
                 }
-                return console.log(error.toJSON());
+            } else {
+                console.log(error.toJSON());
             }
-            return console.log(error);
+            throw error;
         }
     }
 
@@ -45,12 +54,18 @@ const AuthProvider = ({ children }) => {
             setUserToken(token);
         } catch (error) {
             if (error instanceof AxiosError) {
-                if (error.response.status === 400) {
-                    alert('Nome de usuário ou senha incorretos.');
-                    return console.log(error.response.data.message);
-                };
+                switch (error.response.status) {
+                    case 400:
+                        alert('Nome de usuário ou senha incorretos.');
+                        console.log(error.response.data.message);
+                        break;
+
+                    default: alert('Ops, algo deu errado!');
+                }
+            } else {
+                console.log(error.toJSON());
             }
-            return console.log(error);
+            throw error;
         }
     };
 
@@ -64,7 +79,18 @@ const AuthProvider = ({ children }) => {
                 newPassword
             });
         } catch (error) {
-            console.log(error);
+            if (error instanceof AxiosError) {
+                switch (error.response.status) {
+                    case 400:
+                        alert('E-mail inválido.');
+                        break;
+
+                    default: alert('Ops, algo deu errado!');
+                }
+            } else {
+                console.log(error.toJSON());
+            }
+            throw error;
         }
     };
 
