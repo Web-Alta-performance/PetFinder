@@ -36,7 +36,12 @@ const AuthProvider = ({ children }) => {
         password,
     }) => {
         try {
-            const { token } = await userLogin({ email, password });
+            const { token, user } = await userLogin({ email, password });
+            setUserInfo({
+                name: user.name,
+                email: user.email,
+                phone_number: user.phone_number,
+            });
             setUserToken(token);
         } catch (error) {
             if (error instanceof AxiosError) {
@@ -67,6 +72,7 @@ const AuthProvider = ({ children }) => {
         <AuthContext.Provider
             value={{
                 userToken,
+                userInfo,
                 login,
                 register,
                 changePassword,
