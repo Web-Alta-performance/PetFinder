@@ -1,18 +1,24 @@
-import { View } from 'react-native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import Ionicons from '@expo/vector-icons/Ionicons';
 
-// screens
 import { HomeScreen } from '../screens/HomeScreen';
-
-const { Navigator, Screen } = createNativeStackNavigator();
+import { Image } from "react-native";
 
 const MainStack = () => {
+
+    const Drawer = createDrawerNavigator();
+
     return (
-        <View style={{ flex: 1, width: '100%', height: '100%' }}>
-            <Navigator initialRouteName="SignIn" screenOptions={{ headerShown: false }}>
-                <Screen name="Home" component={HomeScreen} />
-            </Navigator>
-        </View>
+        <Drawer.Navigator screenOptions={{ title: '' }}>
+            <Drawer.Screen
+                component={HomeScreen}
+                name='Home'
+                options={{
+                    drawerIcon: ({ color, size }) => <Ionicons name='home' color={color} size={size} />,
+                    drawerLabel: 'Início',
+                }}
+            />
+        </Drawer.Navigator>
     );
 };
 

@@ -3,6 +3,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { View } from 'react-native';
 import { useCallback } from 'react';
 import Router from './routes/router';
+import 'react-native-gesture-handler';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -25,9 +26,9 @@ const App = () => {
   }
 
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
       onLayout={onLayoutRootView}>
-      <Router/>
+      <Router />
     </View>
   );
 }
