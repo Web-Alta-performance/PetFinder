@@ -16,9 +16,10 @@ const ForgotPasswordForm = ({ navigation }) => {
             return;
         }
 
-        await changePassword({ email, newPassword });
-        alert('Senha alterada com sucesso!');
-        navigation.navigate('SignIn');
+        await changePassword({ email, newPassword }).then(() => {
+            alert('Senha alterada com sucesso!');
+            navigation.navigate('SignIn');
+        });
     }
 
     return (
