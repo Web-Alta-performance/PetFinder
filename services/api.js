@@ -34,7 +34,9 @@ export const userChangePassword = async ({
     email,
     newPassword,
 }) => {
-    alert('Essa função ainda está em progresso. Por favor, contate um administrador.');
+    const response = await api.patch(`/users/${email}`, {
+        password: newPassword
+    });
 };
 
 export default api;
