@@ -8,7 +8,7 @@ import ForgotPassword from '../screens/Authentication/ForgotPassword';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
-const LoginStack = () => {
+const AuthStack = () => {
     return (
         <View style={{ flex: 1, width: '100%', height: '100%' }}>
             <Navigator initialRouteName="SignIn" screenOptions={{ headerShown: false }}>
@@ -20,4 +20,4 @@ const LoginStack = () => {
     );
 };
 
-export default LoginStack;
+export default AuthStack;

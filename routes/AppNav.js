@@ -5,7 +5,7 @@ import { useContext } from 'react';
 
 // stacks
 import MainStack from './MainStack';
-import LoginStack from './LoginStack';
+import AuthStack from './AuthStack';
 
 const AppNav = () => {
 
@@ -14,7 +14,7 @@ const AppNav = () => {
     return (
         <View style={{ flex: 1, backgroundColor: '#333' }}>
             <NavigationContainer>
-                {userToken ? <MainStack /> : <LoginStack />}
+                {userToken ? <MainStack /> : <AuthStack />}
             </NavigationContainer>
         </View>
     )
