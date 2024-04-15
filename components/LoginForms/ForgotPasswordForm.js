@@ -1,18 +1,22 @@
 import { View } from 'react-native';
 import { UserForm, FormUserInput, FormUserButton, FormUserLink } from '../UserForm/UserForm';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 const ForgotPasswordForm = ({ navigation }) => {
-    {/* TODO: use UseContext hook to avoid these types of prop */ }
 
     const [email, setEmail] = useState('');
     const [newPassword, setNewPassword] = useState('');
 
-    const handleButtonPress = () => {
+    const { changePassword } = useContext(AuthContext)
+
+    const handleButtonPress = async () => {
         if (!email || !newPassword) {
             alert('Por favor, preencha todos os campos')
             return;
         }
+
+        await changePassword({ email, newPassword });
     }
 
     return (
