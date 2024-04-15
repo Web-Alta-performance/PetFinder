@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import { UserForm, FormUserInput, FormUserButton, FormUserLink } from '../UserForm/UserForm';
-import { useState } from 'react';
-import { registerUser, userRegister } from '../../services/api';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 const SignInForm = ({ navigation }) => {
 
@@ -9,6 +9,8 @@ const SignInForm = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+
+    const { register, login } = useContext(AuthContext);
 
     const handleButtonPress = async () => {
         // check if form is filled
@@ -26,9 +28,10 @@ const SignInForm = ({ navigation }) => {
             return;
         }
 
-        await userRegister({ name, email, password }).then(() => {
-            navigation.navigate('SignIn');
-        });
+        await register({ name, email, password });
+
+        // login automatically after creating account
+        await login({ email, password });
     };
 
     return (
