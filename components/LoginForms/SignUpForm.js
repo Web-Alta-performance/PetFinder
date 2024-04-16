@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import { UserForm, FormUserInput, FormUserButton, FormUserLink } from '../UserForm/UserForm';
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 
 const SignInForm = ({ navigation }) => {
@@ -9,6 +9,10 @@ const SignInForm = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+
+    const emailInput = useRef();
+    const passwordInput = useRef();
+    const confirmPasswordInput = useRef();
 
     const { register, login } = useContext(AuthContext);
 
@@ -39,11 +43,21 @@ const SignInForm = ({ navigation }) => {
             height={560}
             navigation={navigation}
         >
-            <FormUserInput onChange={setName} value={name}>NOME DE USUÁRIO</FormUserInput>
-            <FormUserInput onChange={setEmail} value={email}>E-MAIL</FormUserInput>
-            <FormUserInput onChange={setPassword} value={password} secure>SENHA</FormUserInput>
-            <FormUserInput onChange={setConfirmPassword} value={confirmPassword} secure>CONFIRMAR SENHA</FormUserInput>
-            <FormUserButton color={'#4CA9AF'} onPress={() => handleButtonPress()}>CRIAR CONTA</FormUserButton>
+            <FormUserInput onChange={setName} value={name} onSubmitEditing={() => emailInput.current.focus()}>
+                NOME DE USUÁRIO
+            </FormUserInput>
+            <FormUserInput onChange={setEmail} value={email} ref={emailInput} onSubmitEditing={() => passwordInput.current.focus()}>
+                E-MAIL
+            </FormUserInput>
+            <FormUserInput onChange={setPassword} value={password} secure ref={passwordInput} onSubmitEditing={() => confirmPasswordInput.current.focus()}>
+                SENHA
+            </FormUserInput>
+            <FormUserInput onChange={setConfirmPassword} value={confirmPassword} secure ref={confirmPasswordInput} onSubmitEditing={handleButtonPress}>
+                CONFIRMAR SENHA
+            </FormUserInput>
+            <FormUserButton color={'#4CA9AF'} onPress={handleButtonPress}>
+                CRIAR CONTA
+            </FormUserButton>
             <View style={{
                 alignItems: 'center',
                 justifyContent: 'center',
