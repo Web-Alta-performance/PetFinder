@@ -1,12 +1,14 @@
 import { View } from 'react-native';
 import { UserForm, FormUserInput, FormUserButton, FormUserLink } from '../UserForm/UserForm';
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 
 const ForgotPasswordForm = ({ navigation }) => {
 
     const [email, setEmail] = useState('');
     const [newPassword, setNewPassword] = useState('');
+
+    const newPasswordInput = useRef();
 
     const { changePassword } = useContext(AuthContext)
 
@@ -27,9 +29,11 @@ const ForgotPasswordForm = ({ navigation }) => {
             height={370}
             navigation={navigation}
         >
-            <FormUserInput onChange={setEmail} value={email}>E-MAIL</FormUserInput>
-            <FormUserInput onChange={setNewPassword} value={newPassword} secure>NOVA SENHA</FormUserInput>
-            <FormUserButton color={'#E59466'} onPress={(handleButtonPress)}>ALTERAR SENHA</FormUserButton>
+            <FormUserInput onChange={setEmail} value={email} onSubmitEditing={() => newPasswordInput.current.focus()}>E-MAIL</FormUserInput>
+            <FormUserInput onChange={setNewPassword} value={newPassword} secure ref={newPasswordInput} onSubmitEditing={handleButtonPress}>
+                NOVA SENHA
+            </FormUserInput>
+            <FormUserButton color={'#E59466'} onPress={handleButtonPress}>ALTERAR SENHA</FormUserButton>
             <View style={{
                 alignItems: 'center',
                 justifyContent: 'center',
