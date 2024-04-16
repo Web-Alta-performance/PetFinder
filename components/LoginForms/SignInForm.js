@@ -1,12 +1,14 @@
 import { View } from 'react-native';
 import { UserForm, FormUserInput, FormUserButton, FormUserLink } from '../UserForm/UserForm';
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 
 const SignInForm = ({ navigation }) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const passwordInput = useRef();
 
     const { login } = useContext(AuthContext);
 
@@ -30,8 +32,8 @@ const SignInForm = ({ navigation }) => {
             height={400}
             navigation={navigation}
         >
-            <FormUserInput onChange={setEmail} value={email}>E-MAIL</FormUserInput>
-            <FormUserInput onChange={setPassword} value={password} secure>SENHA</FormUserInput>
+            <FormUserInput onChange={setEmail} value={email} onSubmitEditing={() => passwordInput.current.focus()}>E-MAIL</FormUserInput>
+            <FormUserInput onChange={setPassword} value={password} secure ref={passwordInput} onSubmitEditing={handleButtonPress}>SENHA</FormUserInput>
             <FormUserButton color={'#271810'} onPress={handleButtonPress}>ENTRAR</FormUserButton>
             <View style={{
                 alignItems: 'center',
