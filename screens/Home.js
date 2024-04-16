@@ -2,7 +2,7 @@ import { Text } from "react-native";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
 
-const HomeScreen = () => {
+const Home = () => {
 
     const { userInfo } = useContext(AuthContext);
 
@@ -15,4 +15,4 @@ const HomeScreen = () => {
     );
 };
 
-export { HomeScreen };
+export { Home };
