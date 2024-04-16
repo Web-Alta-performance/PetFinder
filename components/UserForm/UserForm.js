@@ -1,8 +1,9 @@
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { styles } from './UserFormStyle';
 import GlassView from './GlassView';
+import { forwardRef } from 'react';
 
-export const FormUserInput = ({ value, secure, onChange, children }) => {
+export const FormUserInput = forwardRef(({ value, secure, onChange, children, onSubmitEditing }, ref) => {
     return (
         <View style={{ gap: 10, width: '100%', alignItems: 'center' }}>
             <Text style={[styles.text, Foreground]}>
@@ -15,10 +16,13 @@ export const FormUserInput = ({ value, secure, onChange, children }) => {
                 autoCorrect={false}
                 value={value}
                 onChangeText={newText => onChange(newText)}
+                onSubmitEditing={onSubmitEditing}
+                returnKeyType={'next'}
+                ref={ref}
             />
         </View>
     )
-}
+});
 
 export const FormUserButton = ({ onPress, children, color }) => {
     const buttonBg = { backgroundColor: color }
