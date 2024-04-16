@@ -19,6 +19,12 @@ const SignInForm = ({ navigation }) => {
         await login({ email, password });
     };
 
+    const clearFormsAndGoToScreen = (screen) => {
+        setEmail('');
+        setPassword('');
+        navigation.navigate(screen);
+    }
+
     return (
         <UserForm
             height={400}
@@ -32,8 +38,8 @@ const SignInForm = ({ navigation }) => {
                 justifyContent: 'center',
                 gap: 10,
             }}>
-                <FormUserLink onPress={() => navigation.navigate('ForgotPassword')}>Esqueci a senha</FormUserLink>
-                <FormUserLink onPress={() => navigation.navigate('SignUp')}>Crie uma conta aqui</FormUserLink>
+                <FormUserLink onPress={() => clearFormsAndGoToScreen('ForgotPassword')}>Esqueci a senha</FormUserLink>
+                <FormUserLink onPress={() => clearFormsAndGoToScreen('SignUp')}>Crie uma conta aqui</FormUserLink>
             </View>
         </UserForm>
     )
