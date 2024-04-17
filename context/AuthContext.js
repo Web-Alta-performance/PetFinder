@@ -6,7 +6,7 @@ export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
 
-    const [userToken, setUserToken] = useState('');
+    const [userToken, setUserToken] = useState();
     const [userInfo, setUserInfo] = useState();
 
     const register = async ({
@@ -80,6 +80,7 @@ const AuthProvider = ({ children }) => {
             if (error instanceof AxiosError) {
                 switch (error.response.status) {
                     case 400:
+                    case 401:
                         alert('E-mail inválido.');
                         break;
 
