@@ -1,6 +1,8 @@
 import { ScrollView, Text, View, useWindowDimensions } from "react-native";
 import { team } from "../services/team";
 
+import { contentTable } from "../services/localization";
+
 const About = () => {
 
     return (
@@ -10,7 +12,7 @@ const About = () => {
             </Text>
             <ScrollView style={{ flex: 1, alignSelf: 'center', paddingHorizontal: 30 }}>
                 <Text style={{ fontFamily: 'Quicksand-Medium', fontSize: 18, alignSelf: 'center' }}>
-                    DESENVOLVIDO POR
+                    {contentTable.developedBy.toUpperCase()}
                 </Text>
 
                 <View style={{ marginTop: 10, alignSelf: 'center' }}>
@@ -20,8 +22,7 @@ const About = () => {
                 </View>
 
                 <Text style={{ fontSize: 20, fontFamily: 'Quicksand-Medium', alignSelf: 'center', marginVertical: 15, textAlign: 'center' }}>
-                    Petfinder é um aplicativo que visa facilitar e democratizar a adoção
-                    de cães, gatos, e outros pets que necessitam de um novo lar.
+                    {contentTable.aboutPetFinder}
                 </Text>
 
                 {/* ignore */}

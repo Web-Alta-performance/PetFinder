@@ -2,7 +2,7 @@ import { DrawerItem } from "@react-navigation/drawer";
 import { Pressable, Text, View } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useState } from "react";
-import { ShowAppInfo } from "./ShowAppInfo";
+import { contentTable } from "../services/localization";
 
 const CustomDrawer = (props) => {
 
@@ -44,7 +44,7 @@ const CustomDrawer = (props) => {
 
             {/* ITEMS */}
             <DrawerItem
-                label='Início'
+                label={contentTable.homeScreen}
                 icon={({ color, size }) => <Ionicons name='home-outline' color={color} size={size + 10} />}
                 focused={props.state.index === 0}
                 onPress={() => props.navigation.navigate('Home')}
@@ -59,7 +59,7 @@ const CustomDrawer = (props) => {
                 }}
             />
             <DrawerItem
-                label='Configurações'
+                label={contentTable.settingsScreen}
                 icon={({ color, size }) => <Ionicons name='settings-outline' color={color} size={size + 10} />}
                 focused={props.state.index === 1}
                 onPress={() => props.navigation.navigate('Settings')}
@@ -74,7 +74,7 @@ const CustomDrawer = (props) => {
                 }}
             />
             <DrawerItem
-                label='Chats'
+                label={contentTable.chatsScreen}
                 icon={({ color, size }) => <Ionicons name='chatbubbles-outline' color={color} size={size + 10} />}
                 focused={props.state.index === 2}
                 onPress={() => props.navigation.navigate('Chats')}
@@ -89,7 +89,7 @@ const CustomDrawer = (props) => {
                 }}
             />
             <DrawerItem
-                label='Conta'
+                label={contentTable.accountScreen}
                 icon={({ color, size }) => <Ionicons name='person-outline' color={color} size={size + 10} />}
                 focused={props.state.index === 3}
                 onPress={() => props.navigation.navigate('Account')}
@@ -104,7 +104,7 @@ const CustomDrawer = (props) => {
                 }}
             />
             <DrawerItem
-                label='Suporte'
+                label={contentTable.supportScreen}
                 icon={({ color, size }) => <Ionicons name='information-circle-outline' color={color} size={size + 10} />}
                 focused={props.state.index === 4}
                 onPress={() => props.navigation.navigate('Support')}

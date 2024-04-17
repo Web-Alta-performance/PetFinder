@@ -2,6 +2,7 @@ import { View } from 'react-native';
 import { UserForm, FormUserInput, FormUserButton, FormUserLink } from '../UserForm/UserForm';
 import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import { contentTable } from '../../services/localization';
 
 const SignInForm = ({ navigation }) => {
 
@@ -44,26 +45,26 @@ const SignInForm = ({ navigation }) => {
             navigation={navigation}
         >
             <FormUserInput onChange={setName} value={name} onSubmitEditing={() => emailInput.current.focus()}>
-                NOME DE USUÁRIO
+                {contentTable.userNameLabel.toUpperCase()}
             </FormUserInput>
             <FormUserInput onChange={setEmail} value={email} ref={emailInput} onSubmitEditing={() => passwordInput.current.focus()}>
                 E-MAIL
             </FormUserInput>
             <FormUserInput onChange={setPassword} value={password} secure ref={passwordInput} onSubmitEditing={() => confirmPasswordInput.current.focus()}>
-                SENHA
+                {contentTable.passwordLabel.toUpperCase()}
             </FormUserInput>
             <FormUserInput onChange={setConfirmPassword} value={confirmPassword} secure ref={confirmPasswordInput} onSubmitEditing={handleButtonPress}>
-                CONFIRMAR SENHA
+                {contentTable.confirmPasswordLabel.toUpperCase()}
             </FormUserInput>
             <FormUserButton color={'#4CA9AF'} onPress={handleButtonPress}>
-                CRIAR CONTA
+                {contentTable.createAccountButton.toUpperCase()}
             </FormUserButton>
             <View style={{
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 10,
             }}>
-                <FormUserLink onPress={() => navigation.navigate('SignIn')}>Fazer login</FormUserLink>
+                <FormUserLink onPress={() => navigation.navigate('SignIn')}>{contentTable.signInLabel}</FormUserLink>
             </View>
         </UserForm>
     )

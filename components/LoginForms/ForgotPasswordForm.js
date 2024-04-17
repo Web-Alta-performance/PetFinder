@@ -2,6 +2,7 @@ import { View } from 'react-native';
 import { UserForm, FormUserInput, FormUserButton, FormUserLink } from '../UserForm/UserForm';
 import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import { contentTable } from '../../services/localization';
 
 const ForgotPasswordForm = ({ navigation }) => {
 
@@ -31,15 +32,15 @@ const ForgotPasswordForm = ({ navigation }) => {
         >
             <FormUserInput onChange={setEmail} value={email} onSubmitEditing={() => newPasswordInput.current.focus()}>E-MAIL</FormUserInput>
             <FormUserInput onChange={setNewPassword} value={newPassword} secure ref={newPasswordInput} onSubmitEditing={handleButtonPress}>
-                NOVA SENHA
+                {contentTable.newPasswordLabel.toUpperCase()}
             </FormUserInput>
-            <FormUserButton color={'#E59466'} onPress={handleButtonPress}>ALTERAR SENHA</FormUserButton>
+            <FormUserButton color={'#E59466'} onPress={handleButtonPress}>{contentTable.forgotPasswordButton.toUpperCase()}</FormUserButton>
             <View style={{
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 10,
             }}>
-                <FormUserLink onPress={() => navigation.navigate('SignIn')}>Fazer login</FormUserLink>
+                <FormUserLink onPress={() => navigation.navigate('SignIn')}>{contentTable.signInLabel}</FormUserLink>
             </View>
         </UserForm>
     )

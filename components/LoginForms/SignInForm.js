@@ -2,6 +2,7 @@ import { View } from 'react-native';
 import { UserForm, FormUserInput, FormUserButton, FormUserLink } from '../UserForm/UserForm';
 import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import { contentTable } from '../../services/localization';
 
 const SignInForm = ({ navigation }) => {
 
@@ -33,15 +34,15 @@ const SignInForm = ({ navigation }) => {
             navigation={navigation}
         >
             <FormUserInput onChange={setEmail} value={email} onSubmitEditing={() => passwordInput.current.focus()}>E-MAIL</FormUserInput>
-            <FormUserInput onChange={setPassword} value={password} secure ref={passwordInput} onSubmitEditing={handleButtonPress}>SENHA</FormUserInput>
-            <FormUserButton color={'#271810'} onPress={handleButtonPress}>ENTRAR</FormUserButton>
+            <FormUserInput onChange={setPassword} value={password} secure ref={passwordInput} onSubmitEditing={handleButtonPress}>{contentTable.passwordLabel.toUpperCase()}</FormUserInput>
+            <FormUserButton color={'#271810'} onPress={handleButtonPress}>{contentTable.loginButton.toUpperCase()}</FormUserButton>
             <View style={{
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 10,
             }}>
-                <FormUserLink onPress={() => clearFormsAndGoToScreen('ForgotPassword')}>Esqueci a senha</FormUserLink>
-                <FormUserLink onPress={() => clearFormsAndGoToScreen('SignUp')}>Crie uma conta aqui</FormUserLink>
+                <FormUserLink onPress={() => clearFormsAndGoToScreen('ForgotPassword')}>{contentTable.forgotPasswordLabel}</FormUserLink>
+                <FormUserLink onPress={() => clearFormsAndGoToScreen('SignUp')}>{contentTable.createAccountLabel}</FormUserLink>
             </View>
         </UserForm>
     )
