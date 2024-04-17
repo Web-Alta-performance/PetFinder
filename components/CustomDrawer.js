@@ -1,13 +1,9 @@
 import { DrawerItem } from "@react-navigation/drawer";
 import { Pressable, Text, View } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { useState } from "react";
 import { contentTable } from "../services/localization";
 
 const CustomDrawer = (props) => {
-
-    const [infoVisible, setInfoVisible] = useState(false);
-
     return (
         <View style={{ flex: 1, justifyContent: 'center' }}>
             <Pressable
