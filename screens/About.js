@@ -7,6 +7,8 @@ import { useState } from "react";
 const About = ({ navigation }) => {
 
     const [text, setText] = useState();
+    const { width, height } = useWindowDimensions();
+    const isLandscape = width < height
 
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignContent: 'center' }}>
@@ -52,7 +54,7 @@ const About = ({ navigation }) => {
                 />
 
                 <Pressable style={{
-                    marginTop: 10,
+                    marginTop: 20,
                     display: 'flex',
                     alignSelf: 'center',
                     backgroundColor: 'black',
@@ -73,6 +75,10 @@ const About = ({ navigation }) => {
                         Mandar essa informação para a próxima tela
                     </Text>
                 </Pressable>
+
+                <Text style={{ fontSize: 20, fontFamily: 'Quicksand-Medium', alignSelf: 'center', marginVertical: 15, textAlign: 'center' }}>
+                    Você está na orientação {isLandscape ? 'retrato' : 'paisagem'}
+                </Text>
 
                 {/* ignore */}
                 <Text style={{ fontFamily: 'Quicksand-Medium', marginTop: 15 }}>
