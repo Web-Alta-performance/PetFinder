@@ -8,6 +8,7 @@ import { Chats } from '../screens/Chats';
 import { Account } from '../screens/Account';
 import { Support } from '../screens/Support';
 import { About } from '../screens/About';
+import { RandomScreen } from '../screens/RandomScreen';
 
 const MainStack = () => {
 
@@ -23,6 +24,7 @@ const MainStack = () => {
             <Drawer.Screen name='Account' component={Account} />
             <Drawer.Screen name='Support' component={Support} />
             <Drawer.Screen name='About' component={About} />
+            <Drawer.Screen name='RandomScreen' component={RandomScreen} />
         </Drawer.Navigator>
     );
 };

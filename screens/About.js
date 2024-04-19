@@ -1,9 +1,12 @@
-import { ScrollView, Text, View, useWindowDimensions } from "react-native";
+import { Pressable, ScrollView, Text, TextInput, View, useWindowDimensions } from "react-native";
 import { team } from "../services/team";
 
 import { contentTable } from "../services/localization";
+import { useState } from "react";
 
-const About = () => {
+const About = ({ navigation }) => {
+
+    const [text, setText] = useState();
 
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignContent: 'center' }}>
@@ -24,6 +27,52 @@ const About = () => {
                 <Text style={{ fontSize: 20, fontFamily: 'Quicksand-Medium', alignSelf: 'center', marginVertical: 15, textAlign: 'center' }}>
                     {contentTable.aboutPetFinder}
                 </Text>
+
+                <Text style={{ fontSize: 15, fontFamily: 'Quicksand-Medium', alignSelf: 'center', marginVertical: 15, textAlign: 'center' }}>
+                    Insira a informação para ir para a próxima tela
+                </Text>
+
+                <TextInput style={{
+                    backgroundColor: 'white',
+                    borderRadius: 10,
+                    paddingHorizontal: 10,
+                    paddingVertical: 5,
+
+                    shadowColor: "#000",
+                    shadowOffset: {
+                        width: 0,
+                        height: 2,
+                    },
+                    shadowOpacity: 0.25,
+                    shadowRadius: 3.84,
+
+                    elevation: 5,
+                }}
+                    onChangeText={t => setText(t)}
+                />
+
+                <Pressable style={{
+                    marginTop: 10,
+                    display: 'flex',
+                    alignSelf: 'center',
+                    backgroundColor: 'black',
+                    paddingHorizontal: 20,
+                    paddingVertical: 5,
+                    maxWidth: 400,
+                    borderRadius: 15
+                }}
+                    onPress={() => navigation.navigate('RandomScreen', { text })}
+                >
+                    <Text style={{
+                        fontSize: 18,
+                        fontFamily: 'Quicksand-Medium',
+                        textAlign: 'center',
+                        color: 'white',
+                        marginBottom: 5,
+                    }}>
+                        Mandar essa informação para a próxima tela
+                    </Text>
+                </Pressable>
 
                 {/* ignore */}
                 <Text style={{ fontFamily: 'Quicksand-Medium', marginTop: 15 }}>
